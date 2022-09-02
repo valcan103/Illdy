@@ -1,0 +1,916 @@
+/*reset*/
+*
+    margin: 0
+    padding: 0
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif
+    // 'Jua', sans-serif
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td 
+    margin:0
+    padding:0
+a 
+    color: inherit
+    text-decoration: none
+    &:hover
+        text-decoration: none
+        color: inherit
+li 
+    list-style: none
+address, em , i 
+    font-style: none
+h1,h2,h3,h4,h5,h6 
+    font-size: inherit  
+//공통 부분
+=same_title
+    font-size: 35px
+    font-weight: 700
+    color: #545454
+    margin-bottom: 60px
+    font-family: "Poppins"
+    text-align: center
+=same_desc
+    color: #8c9597
+    line-height: 26px
+    font-family: "Lato"
+    font-weight: 400
+    padding: 0 20px
+    text-align: center
+.section_same_title
+    +same_title
+.section_same_description
+    +same_desc
+header
+    width: 100%
+    height: 110px
+    display: flex
+    justify-content: center
+    padding: 10px 0
+    background: transparent
+    position: absolute
+    z-index: 10
+    .pc_nav
+        width: 90%
+        height: 100%
+        display: flex
+        justify-content: space-between
+        align-items: center
+        // display: none
+        .nav_left
+            width: 20%
+            display: flex
+            justify-content: flex-end
+        .nav_right
+            width: 75%
+            display: flex
+            justify-content: flex-end
+            margin-right: 5%
+            ul
+                display: flex
+                flex-wrap: wrap
+                li
+                    margin: 0 20px
+                    a
+                        font-family: "Lato"
+                        font-weight: 700
+                        color: #fff
+                        &:hover
+                            color: #ffde00
+    .mobile
+        width: 90%
+        height: 100%
+        display: flex
+        justify-content: space-between
+        align-items: center
+        display: none
+        .nav_left
+            padding-left: 5%
+        .nav_right
+            padding-right: 10%
+            font-size: 22px
+            color: #fff
+            margin: 0
+.section1
+    .s1_container
+        height: 900px
+        position: relative
+        transition: all 1s
+        .mobile_nav
+            width: 100%
+            display: none
+            transform: translateY(30%)
+            ul
+                background: #fff
+                font-size: 16px
+                li
+                    text-align: center
+                    padding: 20px 0
+                    position: relative
+                    a
+                        color: #000
+                        font-family: "Lato"
+                        font-weight: 400
+                        &:after
+                            content: ""
+                            bottom: 0
+                            left: 0
+                            position: absolute
+                            width: 100%
+                            height: 1px
+                            border-bottom: 1px solid #e4e4e4
+        .img_container
+            width: 100%
+            height: 900px
+            overflow: hidden
+            background: url(../images/front-page/front-page-header.jpg) no-repeat center/cover fixed
+            .s1_desc_container
+                width: 100%
+                text-align: center
+                position: absolute
+                bottom: 30%
+                transition: all 1s
+                h1
+                    font-size: 80px
+                    line-height: 80px
+                    font-weight: 700
+                    font-family: "Poppins"
+                    color: #fff
+                    margin: 0 30px 20px 30px
+                    p
+                        display: inline-block
+                        color: yellow
+                        margin: 0 -15px
+                .desc
+                    width: 55%
+                    margin: 0 auto
+                    text-align: center
+                    color: #ffffff
+                    font-family: "Lato"
+                    font-weight: 400
+                    margin-bottom: 40px
+                    line-height: 26px
+                button
+                    padding: 20px 80px
+                    background: rgba(0, 0, 0, 0.2)
+                    border: 4px solid #fff
+                    border-radius: 5px
+                    color: #fff
+                    font-size: 16px
+                    font-weight: 700
+                    font-family: "Lato"
+                    cursor: pointer
+@media screen and (max-width: 780px)
+    .section1
+        .s1_container
+            height: 500px
+            .img_container
+                height: 500px
+                background-size: cover
+                background-position: top center
+                transition: all 1s
+                .s1_desc_container
+                    bottom: 10%
+                    h1
+                        font-size: 40px
+                        line-height: 40px
+                        p
+                            margin: 0 -5px
+                    .desc
+                        width: 90%
+=skill_style
+    width: 30%
+    position: relative
+    p
+        width: 50px
+        position: absolute
+        background: #f18b6d
+        text-align: center
+        border-radius: 5px
+        color: #fff
+        padding: 5px 10px
+        margin: 0 auto
+        top: -80%
+        right: 30%
+        &:before
+            content: ""
+            position: absolute
+            background: #f18b6d
+            width: 5px
+            height: 5px
+            left: 50%
+            bottom: -2px
+            transform: translateX(-50%) rotate(45deg)
+    .line
+        content: ""
+        background: #ebebeb
+        position: relative
+        width: 100%
+        height: 2px
+        margin: 10px 0
+        &:before
+            content: ""
+            position: absolute
+            background: #f18b6d
+            width: 60%
+            height: 4px
+            transform: translateY(-20%)
+        &:after
+            content: ""
+            position: absolute
+            background: #f18b6d
+            width: 10px
+            height: 10px
+            border-radius: 50%
+            right: 39%
+            transform: translateY(-35%)
+    .skill_desc
+        font-family: "Lato"
+        color: rgb(241, 139, 109)
+        &:before
+            content: "\f031"
+            font-family: fontawesome
+            margin-right: 10px
+.section2
+    padding: 50px 0
+    .s2_container
+        width: 70%
+        margin: 0 auto
+    .skill
+        display: flex
+        justify-content: space-between
+        margin: 100px 5%
+        .skill1
+            +skill_style
+        .skill2
+            +skill_style
+            p
+                background: #f1d204
+                top: -80%
+                right: 8%
+                &:before
+                    background: #f1d204
+            .line
+                &:before
+                    background: #f1d204
+                    width: 82%
+                &:after
+                    background: #f1d204
+                    right: 17%
+            .skill_desc
+                color: rgb(241, 210, 4)
+                &:before
+                    content: "\f303"
+        .skill3
+            +skill_style
+            p
+                background: #6a4d8a
+                top: -80%
+                right: 3%
+                &:before
+                    background: #6a4d8a
+            .line
+                &:before
+                    background: #6a4d8a
+                    width: 86%
+                &:after
+                    background: #6a4d8a
+                    right: 12%
+            .skill_desc
+                color: rgb(106, 77, 138)
+                &:before
+                    content: "\f121"
+@media screen and (max-width: 1200px)
+    .section2
+        .skill
+            .skill1
+                p
+                    right: 28%
+            .skill2
+                p
+                    right: 6%
+            .skill3
+                p
+                    right: 1%
+@media screen and (max-width: 1000px)
+    .section2
+            .skill
+                .skill1
+                    p
+                        right: 26%
+                .skill2
+                    p
+                        right: 4%
+                .skill3
+                    p
+                        right: -1%
+@media screen and (max-width: 800px)
+    .section2
+        .s2_container
+            width: 90%
+        .skill
+            flex-direction: column
+            justify-content: center
+            .skill1
+                width: 80%
+                margin: 25px 50px
+                p
+                    right: 33%
+            .skill2
+                width: 80%
+                margin: 25px 50px
+                p
+                    right: 11%
+            .skill3
+                width: 80%
+                margin: 25px 50px
+                p
+                    right: 6%
+@media screen and (max-width: 600px)
+    .section2
+            .skill
+                .skill1
+                    p
+                        right: 31%
+                .skill2
+                    p
+                        right: 9%
+                .skill3
+                    p
+                        right: 4%
+@media screen and (max-width: 450px)
+    .section2
+            .skill
+                .skill1
+                    p
+                        right: 29%
+                .skill2
+                    p
+                        right: 7%
+                .skill3
+                    p
+                        right: 2%
+.section3
+    .s3_container
+        position: relative
+        &:before
+            content: ""
+            position: absolute
+            width: 100%
+            height: 100%
+            background: url(../images/front-page/pattern.png) repeat
+            z-index: -1
+        .section_same_title
+            margin-bottom: 10px
+            padding-top: 50px
+        .s3_img
+            width: 100%
+            display: flex
+            flex-wrap: wrap
+            margin-top: 60px
+            background-color: #eeeeee
+            img
+                width: 25%
+                &:hover
+                    opacity: 0.4
+                    transition: opacity 0.5s
+@media screen and (max-width: 780px)
+    .section3
+        .s3_container
+            .s3_img
+                img
+                    width: 50%
+.section4
+    padding: 50px 0
+    background: url(../images/testiomnials-background.jpg) no-repeat center/cover
+    .s4_container
+        .section_same_title
+            color: #fff
+        .slider
+            width: 70%
+            margin: 0 auto
+            .slide
+                display: flex
+                justify-content: center
+                align-items: center
+                flex-direction: column
+                img
+                    width: 120px
+                    height: 120px
+                    border-radius: 50%
+                    margin-bottom: 50px
+                .slide_desc
+                    position: relative
+                    background: #6a4d8a
+                    padding: 60px 30px 30px 30px
+                    text-align: center
+                    color: #fff
+                    font-size: 16px
+                    font-family: "Lato"
+                    margin-bottom: 50px
+                    line-height: 26px
+                    font-weight: 400
+                    max-width: 970px
+                    &:after
+                        content: ""
+                        position: absolute
+                        background: #6a4d8a
+                        width: 30px
+                        height: 30px
+                        bottom: 0
+                        left: 50%
+                        transform: translateX(-50%) translateY(50%) rotate(45deg)
+                .name
+                    color: #fff
+                    font-size: 20px
+                    font-family: "Poppins"
+                    font-weight: 700
+            .slick-dots
+                display: flex
+                flex-direction: row
+                padding-top: 10px
+                justify-content: center
+                li
+                    width: 10px
+                    height: 10px
+                    border-radius: 50%
+                    background: #fff
+                    margin: 0 8px
+                    border: 1px solid #fff
+                    &.slick-active
+                        background: transparent
+                    button
+                        display: none
+@media screen and (max-width: 780px)
+    .section4
+        .s4_container
+            .slider
+                width: 100%
+.section5
+    padding: 60px 0 70px
+    .s5_container
+        .section_same_title
+            display: block
+            margin-bottom: 0
+        .card_container
+            display: flex
+            flex-direction: row
+            justify-content: center
+            margin-top: 100px
+            .card
+                width: 25%
+                text-align: center
+                margin: 0 20px
+                .card_title
+                    font-size: 23px
+                    line-height: 32px
+                    font-weight: 700
+                    font-family: "Poppins"
+                    margin-bottom: 20px
+                    position: relative
+                    &:before
+                        content: "\f303"
+                        position: absolute
+                        font-family: fontawesome
+                        font-size: 30px
+                        top: -150%
+                        left: 50%
+                        transform: translateX(-50%)
+                &:nth-child(1)
+                    .card_title
+                        color: rgb(241, 139, 109)
+                &:nth-child(2)
+                    .card_title
+                        color: rgb(241, 210, 4)
+                        &:before
+                            content: "\f121"
+                            top: 0
+                            transform: translateX(-50%) translateY(-150%)
+                &:nth-child(3)
+                    .card_title
+                        color: rgb(106, 77, 138)
+                        &:before
+                            content: "\f002"
+                .card_desc
+                    color: #8c9597
+                    line-height: 26px
+                    font-family: "Lato"
+                    font-weight: 400
+@media screen and (max-width: 780px)
+    .section5
+        .s5_container
+            .card_container
+                display: flex
+                flex-direction: column
+                margin-top: 80px
+                .card
+                    width: 100%
+                    margin: 40px 0
+                    .card_desc
+                        margin: 0 10px
+.section6
+    background: #222f36
+    padding: 70px 0
+    .s6_container
+        .section_same_title
+            margin: 0
+            color: #fff
+        button
+            display: flex
+            background: #f1d204
+            padding: 13px 35px
+            border-radius: 5px
+            font-size: 16px
+            font-family: "Lato"
+            font-weight: 700
+            color: #fff
+            margin: 50px auto
+            text-align: center
+            border: none
+            cursor: pointer
+            i
+                margin-right: 10px
+                transform: translateY(20%)
+        .card_container
+            display: flex
+            margin-top: 80px
+            justify-content: center
+            flex-wrap: wrap
+            .card
+                display: inline-flex
+                flex-direction: column
+                width: 25%
+                margin-top: 30px
+                background: #fff
+                align-self: flex-start
+                min-width: 360px
+                .card_title
+                    font-size: 23px
+                    font-weight: 700
+                    color: #5e5e5e
+                    padding: 40px
+                    font-family: "Poppins"
+                .card_desc
+                    color: #8c9597
+                    padding: 0 40px 40px
+                    line-height: 26px
+                    font-family: "Lato"
+                .more
+                    padding: 0 30px 50px
+                    font-family: "Lato"
+                    color: #f1d204
+                    i
+                        margin-right: 10px
+                        transform: translateY(1px)
+            .card
+                &:nth-child(1)
+                    margin-right: 30px
+                &:nth-child(2)
+                    margin-right: 30px
+@media screen and (max-width: 1200px)
+    .section6
+        .s6_container
+            .card_container
+                .card
+                    min-width: 300px
+@media screen and (max-width: 1000px)
+    .section6
+        .s6_container
+            .card_container
+                .card
+                    min-width: 350px
+                    &:nth-child(3)
+                        transform: translateX(-59%)
+@media screen and (max-width: 780px)
+    .section6
+        .s6_container
+            .card_container
+                .card
+                    width: 90%
+                    &:nth-child(1)
+                        margin-right: 0
+                    &:nth-child(2)
+                        margin-right: 0
+                    &:nth-child(3)
+                        transform: translateX(0)
+.section7
+    .s7_container
+        display: flex
+        position: relative
+        justify-content: space-evenly
+        padding: 60px 0
+        text-align: center
+        background-image: url(../images/front-page/front-page-counter.jpg)
+        background-attachment: fixed
+        background-size: cover
+        .count
+            color: #fff
+            font-size: 60px
+            line-height: 60px
+            font-weight: 700
+            font-family: "Poppins"
+        .desc
+            color: #fff
+            font-size: 20px
+            font-weight: 700
+            font-family: "Poppins"
+        div
+            &:nth-child(1)
+                &:after
+                    content: ""
+                    position: absolute
+                    background: #fff
+                    width: 1px
+                    height: 60%
+                    top: 50%
+                    left: 38%
+                    transform: translateY(-50%)
+            &:nth-child(2)
+                &:after
+                    content: ""
+                    position: absolute
+                    background: #fff
+                    width: 1px
+                    height: 60%
+                    top: 50%
+                    right: 38%
+                    transform: translateY(-50%)
+@media screen and (max-width: 780px)
+    .section7
+        .s7_container
+            display: block
+            div
+                &:nth-child(1)
+                    margin-bottom: 10px
+                    &:after
+                        display: none
+                &:nth-child(2)
+                    margin-bottom: 20px
+                    &:after
+                        display: none
+.section8
+    padding: 80px 0
+    background-image: url(../images/front-page/pattern.png)
+    .s8_container
+        .section_same_title
+            margin-bottom: 0
+        .section_same_description
+            margin-bottom: 80px
+        .card_container
+            width: 100%
+            display: inline-flex
+            align-items: center
+            justify-content: center
+            margin: 0 auto 50px auto
+            .card
+                display: flex
+                img
+                    margin-right: 40px
+                    height: 125px
+                .profile
+                    max-width: 210px
+                    .name
+                        font-size: 20px
+                        font-family: "Poppins"
+                        font-weight: 700
+                        color: #5e5e5e
+                        margin-bottom: 10px
+                        line-height: 20px
+                    .job
+                        color: rgb(241, 139, 109)
+                        margin-bottom: 15px
+                    .desc
+                        color: #8c9597
+                        line-height: 20px
+                    ul
+                        display: flex
+                        li
+                            margin: 20px 20px 0 0
+                            font-size: 18px
+                            color: rgb(241, 139, 109)
+                &:nth-child(2)
+                    .profile
+                        .job
+                            color: rgb(241, 210, 4)
+                        ul
+                            li
+                                color: rgb(241, 210, 4)
+                &:nth-child(3)
+                    .profile
+                        .job
+                            color: rgb(106, 77, 138)
+                        ul
+                            li
+                                color: rgb(106, 77, 138)
+            img
+                border-radius: 50%
+@media screen and (max-width: 780px)
+    .section8
+        .s8_container
+            .card_container
+                flex-direction: column
+                align-items: flex-start
+                .card
+                    margin: 0 5% 0 15%
+                    margin-bottom: 50px
+                    .profile
+                        max-width: none
+                        ul
+                            li
+                                margin-right: 15px
+.section9
+    padding: 50px 0
+    .s9_container
+        display: flex
+        align-items: center
+        flex-direction: column
+        .contact_container
+            width: 80%
+            display: flex
+            flex-wrap: wrap
+            .address
+                width: 32%
+                display: inline-flex
+                font-family: "Lato"
+                color: #f1d204
+                font-weight: 400
+                margin-right: 1%
+                address
+                    width: 60%
+                    color: #8c9597
+                    margin-left: 30px
+                    padding-left: 30px
+                    border-left: 1px solid #dbdbdb
+            .support
+                width: 55%
+                display: inline-flex
+                font-family: "Lato"
+                color: #f1d204
+                font-weight: 400
+                .desc
+                    color: #8c9597
+                    margin-left: 30px
+                    padding-left: 30px
+                    border-left: 1px solid #dbdbdb
+            .sns
+                width: 10%
+                display: flex
+                justify-content: center
+                color: #8c9597
+                li
+                    margin-right: 10px
+        form
+            display: flex
+            justify-content: space-between
+            width: 80%
+            flex-wrap: wrap
+            margin: 50px auto
+            .name
+                width: 30%
+                line-height: 25px
+                label
+                    color: #8c9597
+                input
+                    width: 100%
+                    box-sizing: border-box
+                    margin-bottom: 20px
+                    padding: 0 20px
+                    height: 35px
+                    background: #fcfcfc
+                    border: 1px solid #e1e1e1
+            .email
+                width: 30%
+                line-height: 25px
+                label
+                    color: #8c9597
+                input
+                    width: 100%
+                    box-sizing: border-box
+                    margin-bottom: 20px
+                    padding: 0 20px
+                    height: 35px
+                    background: #fcfcfc
+                    border: 1px solid #e1e1e1
+            .subject
+                width: 30%
+                line-height: 25px
+                label
+                    color: #8c9597
+                input
+                    width: 100%
+                    box-sizing: border-box
+                    margin-bottom: 20px
+                    padding: 0 20px
+                    height: 35px
+                    background: #fcfcfc
+                    border: 1px solid #e1e1e1
+            .message
+                width: 100%
+                label
+                    color: #8c9597
+                    line-height: 25px
+                textarea
+                    width: 100%
+                    height: 220px
+                    resize: none
+                    background: #fcfcfc
+                    border: 1px solid #e1e1e1
+        button
+            background: #f1d204
+            border: none
+            border-radius: 5px
+            padding: 20px 60px
+            font-family: "Lato"
+            font-weight: 700
+            color: #fff
+            align-self: flex-end
+            margin-right: 13%
+@media screen and (max-width: 780px)
+    .section9
+        .s9_container
+            display: flex
+            .contact_container
+                width: 100%
+                padding-left: 10%
+                box-sizing: border-box
+                .address
+                    width: 100%
+                    margin-bottom: 50px
+                    div
+                        padding-right: 50px
+                    address
+                        margin-left: 0
+                .support
+                    width: 100%
+                    margin-bottom: 50px
+                    div
+                        padding-right: 29px
+                    .desc
+                        margin-left: 0
+                .sns
+                    justify-content: flex-start
+            form
+                width: 100%
+                justify-content: center
+                .name
+                    width: 90%
+                .email
+                    width: 90%
+                .subject
+                    width: 90%
+                .message
+                    width: 90%
+            button
+                margin-right: 5%
+@media screen and (max-width: 550px)
+    .section9
+        .s9_container
+            .contact_container
+                padding-left: 5%
+                .address
+                    display: block
+                    address
+                        border: none
+                        padding: 20px 0 0 0
+                .support
+                    display: block
+                    .desc
+                        border: none
+                        padding: 20px 0 0 0
+footer
+    padding-top: 50px
+    background: #292825
+    .footer_top
+        padding: 0 40px
+        .footer_container
+            display: flex
+            flex-wrap: wrap
+            .card
+                margin-right: 15%
+                .title
+                    color: #fff
+                    font-size: 23px
+                    font-weight: 700
+                    font-family: "Poppins"
+                    margin-bottom: 10px
+                ul
+                    li
+                        padding: 8px
+                        a
+                            color: #8c979e
+                            font-family: "Lato"
+                            padding-left: 10px
+                        &:before
+                            content: "\f054"
+                            position: absolute
+                            color: #8c979e
+                            font-family: "fontawesome"
+                            font-size: 10px
+                            transform: translateX(-5px) translateY(5px)
+    .footer_bottom
+        background: #242320
+        padding: 30px 0
+        text-align: center
+        margin-top: 40px
+        .desc
+            font-size: 15px
+            color: #fff
+            span
+                color: #8c9597
